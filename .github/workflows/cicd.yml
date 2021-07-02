@@ -40,6 +40,7 @@ jobs:
 
       - name: Next step with adding more env vars
         run: |
+          echo "COMPOSITE_ENV_VAR=${{ env.PROJECT_NAME }}-${{ env.ENV_NAME }}" >> $GITHUB_ENV
           echo "SOME_OTHER_VAR=look_at_me" >> $GITHUB_ENV
 
       - name: Last step so far
