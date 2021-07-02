@@ -1,0 +1,31 @@
+name: Deploy to Amazon ECS
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  PROJECT_NAME: github-test
+  APP_NAME: github-test
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build-deploy:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      ### < Mapping Branch to the Environment
+      - name: Set env vars (master)
+        if: endsWith(github.ref, '/master')
+        run: |
+          echo "ENV_NAME=master" >> $GITHUB_ENV
+          echo "SECRET_WITH_ASTERISK=${{ secrets.SECRET_WITH_ASTERISK }}" >> $GITHUB_ENV
+          echo "SECRET_WITHOUT_ASTERISK=${{ secrets.SECRET_WITHOUT_ASTERISK }}" >> $GITHUB_ENV
+
+      - name: Next step
+        run: |
+          echo "Hello from pipeline"
