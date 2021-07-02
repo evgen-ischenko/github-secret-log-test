@@ -28,6 +28,10 @@ jobs:
           echo "THIRD_SECRET=${{ secrets.THIRD_SECRET }}" >> $GITHUB_ENV
           echo "FOURTH_ONE=${{ secrets.FOURTH_ONE }}" >> $GITHUB_ENV
 
-      - name: Next step
+      - name: Next step with adding more env vars
+        run: |
+          echo "SOME_OTHER_VAR=look_at_me" >> $GITHUB_ENV
+
+      - name: Last step so far
         run: |
           echo "Hello from pipeline"
