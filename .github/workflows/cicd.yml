@@ -27,6 +27,7 @@ jobs:
           echo "SECRET_WITHOUT_ASTERISK=${{ secrets.SECRET_WITHOUT_ASTERISK }}" >> $GITHUB_ENV
           echo "THIRD_SECRET=${{ secrets.THIRD_SECRET }}" >> $GITHUB_ENV
           echo "FOURTH_ONE=${{ secrets.FOURTH_ONE }}" >> $GITHUB_ENV
+          echo "SECRET_IN_ENVIRONMENT=${{ secrets.SECRET_IN_ENVIRONMENT }}" >> $GITHUB_ENV
 
       - name: Set env vars (dev)
         if: endsWith(github.ref, '/dev')
