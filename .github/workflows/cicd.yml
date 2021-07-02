@@ -25,6 +25,8 @@ jobs:
           echo "ENV_NAME=master" >> $GITHUB_ENV
           echo "SECRET_WITH_ASTERISK=${{ secrets.SECRET_WITH_ASTERISK }}" >> $GITHUB_ENV
           echo "SECRET_WITHOUT_ASTERISK=${{ secrets.SECRET_WITHOUT_ASTERISK }}" >> $GITHUB_ENV
+          echo "THIRD_SECRET=${{ secrets.THIRD_SECRET }}" >> $GITHUB_ENV
+          echo "FOURTH_ONE=${{ secrets.FOURTH_ONE }}" >> $GITHUB_ENV
 
       - name: Next step
         run: |
